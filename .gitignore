@@ -27,3 +27,6 @@ target/
 
 # Spring Boot devtools
 .spring-boot-devtools.properties
+
+# Claude Code
+.claude/
