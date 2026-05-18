@@ -38,6 +38,7 @@ public class JobApplication {
     public ApplicationStatus getStatus(){return status;}
     public LocalDate getDateApplied(){return dateApplied;}
     public String getNotes(){return notes;}
+    public Long getId(){return id;}
 
     //setters
     public void setCompany(String company){this.company = company;}
@@ -45,6 +46,7 @@ public class JobApplication {
     public void setStatus(ApplicationStatus status){this.status = status;}
     public void setDateApplied(LocalDate dateApplied){this.dateApplied = dateApplied;}
     public void setNotes(String notes){this.notes = notes;}
+    public void setId(Long id){this.id = id;}
 
 
 }

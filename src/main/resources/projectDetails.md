@@ -86,3 +86,29 @@ id, email, password, created_at
 applications
 id, user_id, company, job_title,
 status, date_applied, notes
+
+
+
+this is my tech stack:
+Your stack
+Backend:
+
+Java — language you already know
+Spring Boot — runs your server, handles your endpoints
+Spring Security + JWT — handles login and auth
+Spring Data JPA — talks to your database without writing SQL
+PostgreSQL — stores all your data permanently
+
+Frontend:
+
+React — your UI, built with JavaScript you already know
+Vite — just sets up your React project in one command
+Axios — sends requests from React to your Spring Boot backend
+Tailwind CSS — styling without writing much CSS
+
+Tools:
+
+IntelliJ — for your Java backend
+VS Code — for your React frontend
+Postman — to test your backend before React exists
+GitHub — version control, employers will look at this

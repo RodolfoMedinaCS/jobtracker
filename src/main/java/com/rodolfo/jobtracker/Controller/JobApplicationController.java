@@ -1,15 +1,14 @@
 package com.rodolfo.jobtracker.Controller;
 
 
+import com.rodolfo.jobtracker.DTO.Stats;
 import com.rodolfo.jobtracker.Entity.JobApplication;
 import com.rodolfo.jobtracker.Service.JobApplicationService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 public class JobApplicationController {
 
@@ -19,14 +18,40 @@ public class JobApplicationController {
         this.jobApplicationService = jobApplicationService;
     }
 
+    //save application
     @PostMapping("/api/v1/applications")
     public void saveApplication(@RequestBody JobApplication jobApplication){
         jobApplicationService.saveApplication(jobApplication);
     }
 
+    //get all applications
     @GetMapping("/api/v1/applications")
     public List<JobApplication> getAllApplications(){
         return jobApplicationService.getAllApplications();
+    }
+
+    //get single application
+    @GetMapping("/api/v1/applications/{id}")
+    public JobApplication getApplication(@PathVariable Long id){
+        return jobApplicationService.getApplication(id);
+    }
+
+    //delete application
+    @DeleteMapping("/api/v1/applications/{id}")
+    public void deleteApplication(@PathVariable Long id){
+         jobApplicationService.deleteJobApplication(id);
+    }
+
+    //update application
+    @PatchMapping("/api/v1/applications/{id}")
+    public void updateApplication(@PathVariable Long id , @RequestBody JobApplication jobApplication){
+        jobApplicationService.updateApplication(id, jobApplication);
+    }
+
+    //get user stats
+    @GetMapping("/api/v1/applications/stats")
+    public Stats getStats(){
+        return jobApplicationService.getStats();
     }
 
 }
